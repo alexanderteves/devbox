@@ -1,0 +1,5 @@
+[user]
+	email = alexander.teves@gmail.com
+	name = Alexander Teves
+[core]
+	editor = gvim -f
