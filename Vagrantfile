@@ -15,5 +15,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 18080
   config.vm.network "forwarded_port", guest: 80, host: 10080
   config.vm.network "forwarded_port", guest: 3128, host: 13128
-  config.vm.synced_folder "~/var/www", "/var/www"
+  config.vm.synced_folder "~/var/www", "/var/www", create: true
 end
