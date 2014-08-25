@@ -1,18 +1,27 @@
 class php {
+    # TODO: installation of composer
+
     file {'/var/www':
         owner  => 'www-data',
         group  => 'www-data',
     }
-
-    package { 'php5':
+    ->
+    file {'/var/www/info.php':
+        ensure  => file,
+        owner   => 'www-data',
+        group   => 'www-data',
+        source  => 'puppet:///modules/php/info.php',
+    }
+    ->
+    package {'php5':
         ensure => latest,
     }
     ->
-    package { 'php5-cli':
+    package {'php5-cli':
         ensure => latest,
     }
     ->
-    package { 'php5-fpm':
+    package {'php5-fpm':
         ensure => latest,
     }
     ->
@@ -21,7 +30,16 @@ class php {
         source => 'puppet:///modules/nginx/www.conf',
     }
     ~>
+    service {'apache2':
+        ensure => stopped,
+    }
+    ~>
+    service {'nginx':
+        ensure => running,
+    }
+    ~>
     service {'php5-fpm':
         ensure => running,
     }
 }
+

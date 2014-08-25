@@ -1,5 +1,6 @@
 class software {
-    exec { 'apt':
+    exec {'apt':
         command => '/usr/bin/apt-get update',
     }
 }
+

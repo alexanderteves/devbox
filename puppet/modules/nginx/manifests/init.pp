@@ -11,8 +11,5 @@ class nginx {
         ensure => file,
         source => 'puppet:///modules/nginx/phpfpm',
     }
-    ~>
-    service {'nginx':
-        ensure => stopped,
-    }
 }
+

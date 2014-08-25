@@ -1,13 +1,14 @@
 class software::system {
-    package { 'curl':
+    package {'curl':
         ensure => latest,
     }
 
-    package { 'htop':
+    package {'htop':
         ensure => latest,
     }
     
-    package { 'aptitude':
+    package {'aptitude':
         ensure => latest,
     }
 }
+

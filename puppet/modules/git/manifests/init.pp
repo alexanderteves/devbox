@@ -1,10 +1,11 @@
 class git {
-    package { 'git':
+    package {'git':
         ensure => latest,
     }
     ->
-    file { '/home/vagrant/.gitconfig':
+    file {'/home/vagrant/.gitconfig':
         ensure => file,
         source => 'puppet:///modules/git/.gitconfig',
     }
 }
+
