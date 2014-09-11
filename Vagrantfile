@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
   end
-  config.vm.box = "trusty64"
+  config.vm.box = "alexanderteves/trusty64"
   config.vm.network "forwarded_port", guest: 5984, host: 15984
   config.vm.network "forwarded_port", guest: 8080, host: 18080
   config.vm.network "forwarded_port", guest: 80, host: 10080

@@ -29,6 +29,10 @@ class php {
         ensure => file,
         source => 'puppet:///modules/nginx/www.conf',
     }
+    ->
+    package {'apache2':
+        ensure => absent,
+    }
     ~>
     service {'apache2':
         ensure => stopped,
