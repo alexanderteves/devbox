@@ -25,6 +25,10 @@ class php {
         ensure => latest,
     }
     ->
+    package {'php5-sqlite':
+        ensure => latest,
+    }
+    ->
     file {'/etc/php5/fpm/pool.d/www.conf':
         ensure => file,
         source => 'puppet:///modules/nginx/www.conf',
